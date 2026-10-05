@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ahaan's Portfolio</title>
 <style>
-
-    html {
-      scroll-behavior: smooth;
-    }
-  
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 
     body {
@@ -23,6 +22,7 @@
         line-height: 1.6;
     }
 
+    /* Navigation */
     header {
         background: #ffffff;
         border-bottom: 1px solid #dddddd;
@@ -68,6 +68,7 @@
         color: #2563eb;
     }
 
+    /* Hero Section */
     .hero {
         background: #ffffff;
         padding-top: 90px;
@@ -166,15 +167,42 @@
         border-bottom: 1px solid #dddddd;
     }
 
-    .project-card {
+    .projects-container {
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .project-card {
+        flex: 1 1 280px;
         padding: 20px;
         background: #f8fafc;
         border: 1px solid #dddddd;
         border-radius: 8px;
         min-height: 120px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .badge-wip {
+        display: inline-block;
+        background: #f1f5f9;
+        color: #64748b;
+        border: 1px solid #e2e8f0;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-bottom: 10px;
     }
 
     .project-card h3 {
@@ -299,9 +327,16 @@
 
     <section id="projects" class="section-padding">
         <h2 class="section-title">Projects</h2>
-        <div class="project-card">
-            <h3>Coming Soon</h3>
-            <p>I'm currently working on a few things. Check back later to see what I've built.</p>
+        <div class="projects-container">
+            <div class="project-card">
+                <span class="badge-wip">Work in Progress</span>
+                <h3>2D Platformer Game</h3>
+                <p>I'm currently working on a 2D platformer game built in C++ using the raylib library.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Other Projects Coming Soon</h3>
+            </div>
         </div>
     </section>
 
